@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Event Example</title>
+    <style>
+        body {
+            height: 2000px; /* লম্বা পেজ তৈরি করতে */
+            margin: 0;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Scroll down to see the console message.
+    </div>
+
+    <script>
+        // Scroll event listener যোগ করা
+        window.addEventListener('scroll', function() {
+            document.write('Page is scrolling');
+        });
+    </script>
+</body>
+</html>
