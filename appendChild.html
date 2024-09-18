@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>appendChild Example</title>
+</head>
+<body>
+    <div id="container">
+        <p id="paragraph">Existing Paragraph</p>
+    </div>
+
+    <button id="addButton">Add New Paragraph</button>
+    <button id="rmvButton"> Remove Paragraph</button>
+
+
+    <script>
+        const container = document.getElementById('container');
+        const addButton = document.getElementById('addButton');
+        const rmvButton = document.getElementById('rmvButton');
+
+        var newParagraph = null;
+        addButton.addEventListener('click', function() {
+            // নতুন একটি প্যারাগ্রাফ তৈরি করা
+            if(!newParagraph){
+                 newParagraph = document.createElement('p');
+                newParagraph.textContent = 'This is a new paragraph';
+
+                // container-এ নতুন প্যারাগ্রাফ অ্যাপেন্ড করা
+                container.appendChild(newParagraph);
+                
+                
+            }
+            
+        });
+
+        rmvButton.addEventListener('click', function() {
+
+            if(newParagraph){
+
+                // নতুন একটি প্যারাগ্রাফ তৈরি করা
+            
+             
+                container.removeChild(newParagraph);
+                newParagraph = null;  // প্যারাগ্রাফ null করা
+                
+            
+            }
+            
+        });
+
+
+
+    </script>
+</body>
+</html>

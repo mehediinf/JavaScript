@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getAttribute and setAttribute Example</title>
+</head>
+<body>
+    <button id="clickButton" data-clicks="0">Click Me</button>
+    <button id="removeListenerButton">Remove Event Listener</button>
+
+    <script>
+        const clickButton = document.getElementById('clickButton');
+        const removeListenerButton = document.getElementById('removeListenerButton');
+
+        // ইভেন্ট হ্যান্ডলার ফাংশন
+        function handleClick() {
+            // বাটনে ক্লিক সংখ্যা গণনা করা হচ্ছে
+            let clicks = clickButton.getAttribute('data-clicks');  // বর্তমান clicks সংখ্যা পাওয়া হচ্ছে
+            clicks = parseInt(clicks) + 1;  // clicks সংখ্যা একটিতে বৃদ্ধি করা হচ্ছে
+            clickButton.setAttribute('data-clicks', clicks);  // clicks সংখ্যা আপডেট করা হচ্ছে
+
+            alert(`Button clicked ${clicks} times`);
+        }
+
+        // 'clickButton' এ ক্লিক ইভেন্ট যোগ করা
+        clickButton.addEventListener('click', handleClick);
+
+        // 'removeListenerButton' এ ক্লিক করলে 'clickButton' থেকে ইভেন্ট লিসেনার সরানো হবে
+        removeListenerButton.addEventListener('click', function() {
+            clickButton.removeEventListener('click', handleClick);
+            alert('Event listener removed!');
+        });
+    </script>
+</body>
+</html>

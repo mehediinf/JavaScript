@@ -6,7 +6,7 @@ let button = document.getElementById('myButton');
 
 
 para.textContent = 'Updated paragraph text.';
-button.addEventListener('input',function(){
+button.addEventListener('click',function(){
 
     para.textContent = 'Paragraph text changed on button click';
 
@@ -15,7 +15,6 @@ button.addEventListener('input',function(){
 let newElement = document.createElement('p');
 newElement.textContent = 'New Paragraph added';
 document.getElementById('container').appendChild(newElement);
-
 
 
 

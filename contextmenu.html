@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Context Menu Example</title>
+</head>
+<body>
+    <button id="myButton">Right-Click on Me</button>
+
+    <script>
+        // বাটন সিলেক্ট করা
+        const button = document.getElementById('myButton');
+
+        // contextmenu ইভেন্টে ইভেন্ট লিসেনার যোগ করা
+        button.addEventListener('contextmenu', function(event) {
+            event.preventDefault(); // ডান ক্লিকের ডিফল্ট মেনু বন্ধ করার জন্য
+            document.write('Right-clicked on button');
+        });
+    </script>
+</body>
+</html>
